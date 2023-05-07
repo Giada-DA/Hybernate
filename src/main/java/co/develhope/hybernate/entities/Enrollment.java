@@ -1,6 +1,8 @@
 package co.develhope.hybernate.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -16,5 +18,40 @@ public class Enrollment{
 
     @ManyToOne
     public SchoolClass schoolClass;
+
+
+    public Enrollment() {
+    }
+
+    public Enrollment(int id, Student student, SchoolClass schoolClass) {
+        this.id = id;
+        this.student = student;
+        this.schoolClass = schoolClass;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+    public SchoolClass getSchoolClass() {
+        return schoolClass;
+    }
+
+    public void setSchoolClass(SchoolClass schoolClass) {
+        this.schoolClass = schoolClass;
+    }
+
 
 }

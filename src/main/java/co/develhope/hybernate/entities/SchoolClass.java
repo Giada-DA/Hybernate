@@ -9,8 +9,7 @@ import org.hibernate.annotations.NotFound;
 import javax.persistence.*;
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
+
 public class SchoolClass{
 
     @Id
@@ -21,5 +20,40 @@ public class SchoolClass{
     public String materia;
     @NotNull
     public String descrizione;
+
+
+    public SchoolClass() {
+    }
+
+    public SchoolClass(int id, String materia, String descrizione) {
+        this.id = id;
+        this.materia = materia;
+        this.descrizione = descrizione;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getMateria() {
+        return materia;
+    }
+
+    public void setMateria(String materia) {
+        this.materia = materia;
+    }
+
+    public String getDescrizione() {
+        return descrizione;
+    }
+
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
+    }
+
 
 }
